@@ -1,5 +1,3 @@
-import link from "./component/link";
-
 export default function links() {
     return (
         <div className="right-[2.5%] top-0 right-0 fixed z-10 w-[48px]">

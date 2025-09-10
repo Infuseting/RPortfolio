@@ -1,4 +1,3 @@
-import Image from "next/image";
 import links from "./element/links";
 import email from "./element/email";
 import Home from "./element/home";
