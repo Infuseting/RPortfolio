@@ -20,7 +20,6 @@ function Typing({ words, intervalMs = 10000 }: TypingProps) {
         const randomChar = () => chars[Math.floor(Math.random() * chars.length)];
         const randomString = (len: number) => Array.from({ length: len }, () => randomChar()).join("");
 
-        let revealTimer: number | undefined;
         let holdTimer: number | undefined;
         let obfTimer: number | undefined;
 
@@ -29,7 +28,7 @@ function Typing({ words, intervalMs = 10000 }: TypingProps) {
 
         // reveal left-to-right
         let i = 0;
-        revealTimer = window.setInterval(() => {
+        const revealTimer = window.setInterval(() => {
             i++;
             setDisplay(word.slice(0, i) + randomString(Math.max(0, n - i)));
             if (i >= n) {
@@ -70,7 +69,7 @@ export default function Home() {
     return (
         <div className="container mx-auto h-screen">
             <div className="flex justify-center align-center flex-col h-full ">
-                <h1 className="text-8xl font-bold mb-4 font-rounded">Hi, I'm<br />Arthur Serret</h1>
+                <h1 className="text-8xl font-bold mb-4 font-rounded">Hi, I&apos;m<br />Arthur Serret</h1>
                 <Typing words={["Java Developer", "Full-Stack Developer", "SQL Developer", "Docker Rookie"]} intervalMs={10000} />
                 <p className="text-lg text-gray-700 w-2/6 font-rounded">
                     I’m a student developer with over 4 years of experience, having started my journey in 2020 during the COVID lockdown. Over the years, I’ve worked on a variety of projects, exploring different technologies and languages such as C, Java, JavaFX, PHP, Flutter, Kotlin, and more. My expertise lies in creating efficient, user-friendly applications, ranging from backend solutions to mobile apps. I’m passionate about learning, building scalable systems, and continuously improving my skills to deliver high-quality results.
