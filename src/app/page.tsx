@@ -7,6 +7,7 @@ import { motion, useScroll } from "motion/react"
 import Studies from "./element/studies";
 import React, { useState } from "react";
 export default function Main() {
+  <SpeedInsights/>
   const { scrollYProgress } = useScroll()
 
     return (
