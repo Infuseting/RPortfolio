@@ -2,8 +2,10 @@
 import links from "./element/component/links";
 import email from "./element/component/email";
 import Home from "./element/home";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { motion, useScroll } from "motion/react"
 import Studies from "./element/studies";
+import React, { useState } from "react";
 export default function main() {
   const { scrollYProgress } = useScroll()
 
@@ -30,7 +32,6 @@ export default function main() {
 
 
 
-import React, { useState } from "react";
 
 function ScrollLinked() {
   const [showRest, setShowRest] = useState(false);
