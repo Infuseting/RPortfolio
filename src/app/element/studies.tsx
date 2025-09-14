@@ -29,16 +29,16 @@ export default function Studies() {
 }
 
 function monthString(monthNumber : number) {
-    let month = ["Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov"]
+    const month = ["Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov"]
     return month[monthNumber];
 }
 
-function timelineEl(name : string, city : string, description : string, date_start: number, date_end: number, Icon : IconType, releted_stack : any[], way : boolean, url : string) {
+function timelineEl(name : string, city : string, description : string, date_start: number, date_end: number, Icon : IconType, releted_stack : string[], way : boolean, url : string) {
     let dateEl = null;
         
     if (date_start && date_end) {
-        let startDate : Date = new Date(date_start)
-        let endDate : Date = new Date(date_end)
+        const startDate : Date = new Date(date_start)
+        const endDate : Date = new Date(date_end)
         if (lastTimestamp !== endDate.getTime()) {
             timeDif += 20;
         }
@@ -46,7 +46,7 @@ function timelineEl(name : string, city : string, description : string, date_sta
         dateEl = monthString(startDate.getUTCMonth()) + " " + startDate.getUTCFullYear() + " - " + monthString(endDate.getUTCMonth()) + " " + endDate.getUTCFullYear()
     }
     else if (date_start) {
-        let startDate : Date =  new Date(date_start)
+        const startDate : Date =  new Date(date_start)
         if (lastTimestamp !== startDate.getTime()) {
             timeDif += 20;
         }
