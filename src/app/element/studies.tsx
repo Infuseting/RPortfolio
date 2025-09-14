@@ -18,8 +18,8 @@ export default function Studies() {
 
                     <ol className="flex flex-col gap-8 list-none p-0 m-0 py-20">
                         {timelineEl("Improovz", "Caen", "Web Freelance, sur differents domaines (PHP Natif, Symfony, Wordpress, ...)", Date.UTC(2024, 12, 5), NaN, FaMoneyCheck, [], false, "https://improovz.infuseting.fr/")}
-                        {timelineEl("BUT Informatique", "Caen", "BUT Informatique OPTION B", Date.UTC(2024, 9, 2), NaN, FaSchool, [], true, NaN)}
-                        {timelineEl("Lycée Les Fontenelles", "Louviers", "BAC NSI, Maths et Physique-Chimie + Options Maths Expert", Date.UTC(2022, 9, 2), Date.UTC(2024, 7, 6), FaSchool, [], false, NaN)}
+                        {timelineEl("BUT Informatique", "Caen", "BUT Informatique OPTION B", Date.UTC(2024, 9, 2), NaN, FaSchool, [], true, '')}
+                        {timelineEl("Lycée Les Fontenelles", "Louviers", "BAC NSI, Maths et Physique-Chimie + Options Maths Expert", Date.UTC(2022, 9, 2), Date.UTC(2024, 7, 6), FaSchool, [], false, '')}
                     </ol>
                 </div>
             </div>
@@ -60,7 +60,7 @@ function timelineEl(name : string, city : string, description : string, date_sta
             <motion.li className={`bg-white p-8 shadow-lg w-11/12 md:w-[45%] ${way ? "md:ml-auto" : "md:mr-auto"}`}  whileHover={{ scale: 1.1 }} whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 100 }} transition={{ duration: 0.5, delay: timeDif / 100 }}>
                 <div className={`flex flex-row justify-between items-center mb-4`}>
                     <Icon className="text-purple-700 w-10 h-10 order-first"/>
-                    <h3 className={`text-2xl font-semibold ${way ? "text-right" : "sm:text-left md:text-right"}`}>{url ? <a href={url}>{name}</a> : name}</h3>
+                    <h3 className={`text-2xl font-semibold ${way ? "text-right" : "sm:text-left md:text-right"}`}>{url && url !== '' ? <a href={url}>{name}</a> : name}</h3>
                 </div>
                 
                 <p className="text-lg mb-4">
