@@ -64,7 +64,7 @@ function Typing({ words, intervalMs = 10000 }: TypingProps) {
         };
     }, [wordIndex, words, intervalMs]);
 
-    return <motion.p whileInView={{ opacity: 1, x: 0 }} initial={{ opacity: 0, x: -100 }} transition={{ duration: 0.5 }} className="text-purple-700 text-6xl mb-4">{display}</motion.p>;
+    return <motion.p whileInView={{ opacity: 1, x: 0 }} initial={{ opacity: 0, x: -100 }} transition={{ duration: 0.5 }} className="text-purple-700 md:text-6xl text-2xl mb-4">{display}</motion.p>;
 }
 export default function Home({ onIntroEnd }: { onIntroEnd?: () => void }) {
     const homeRef = React.useRef<HTMLDivElement | null>(null);
@@ -164,7 +164,7 @@ export default function Home({ onIntroEnd }: { onIntroEnd?: () => void }) {
 
 
     return (
-        <div id="home" className="container mx-auto h-screen relative w-fit-content">
+        <div id="home" className="container mx-auto min-h-screen flex align-center items-center relative w-fit-content">
             {/* Animated intro title */}
             {(phase !== 'showContent') && (
                 <motion.div
@@ -175,7 +175,7 @@ export default function Home({ onIntroEnd }: { onIntroEnd?: () => void }) {
                 >
                     <motion.h1
                         id="intro-title"
-                        className={`text-8xl font-bold mb-4 font-rounded ${alignLeft ? "text-left" : "text-center"}`}
+                        className={`md:text-8xl text-4xl font-bold mb-4 font-rounded ${alignLeft ? "text-left" : "text-center"}`}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5 }}
@@ -199,7 +199,7 @@ export default function Home({ onIntroEnd }: { onIntroEnd?: () => void }) {
             {/* Main content appears after intro animation */}
             {phase === 'showContent' && (
                 <div className="flex justify-center align-center flex-col h-full">
-                    <motion.h1 className="text-8xl font-bold mb-4 font-rounded" initial={{ opacity: 1, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>Hi, I&apos;m<br />Arthur Serret</motion.h1>
+                    <motion.h1 className="md:text-8xl text-4xl font-bold mb-4 font-rounded" initial={{ opacity: 1, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>Hi, I&apos;m<br />Arthur Serret</motion.h1>
                     {showTyping && (
                         <Typing words={["Java Developer", "Full-Stack Developer", "SQL Developer", "Docker Rookie"]} intervalMs={10000} />
                     )}

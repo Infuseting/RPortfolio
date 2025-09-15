@@ -38,7 +38,7 @@ function ScrollLinked() {
   const [showRest, setShowRest] = useState(false);
   return (
     <div className="">
-      <div className="mx-[15%]">
+      <div className="2xl:mx-[7.5%] xl:mx-[7.5%] lg:mx-[10%] md:mx-[15%] sm:mx-[20%] mx-[20%]">
         <Home onIntroEnd={() => setShowRest(true)} />
       </div>
       {showRest && (
